@@ -2,7 +2,7 @@ import { SingUpController } from './singup'
 import { MissingParamError, ServerError } from '../../errors'
 import { AccountModel, AddAccountModel, AddAccount , Validation } from './singup-protocols'
 import { HttpRequest } from '../../protocols'
-import { badRequest } from '../../helpers/http-helper'
+import { badRequest } from '../../helpers/http/http-helper'
 
 const makeAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
