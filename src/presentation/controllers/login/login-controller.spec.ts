@@ -1,4 +1,4 @@
-import { LoginContoller } from './login-controller'
+import { LoginController } from './login-controller'
 import { badRequest, ok, serverError, unauthorized } from '../../helpers/http/http-helper'
 import { MissingParamError } from '../../errors'
 import { HttpRequest, Authentication, Validation } from './login-controller-protocols'
@@ -32,7 +32,7 @@ const makeFakeRequest = (): HttpRequest => (
 )
 
 interface SutTypes {
-  sut: LoginContoller
+  sut: LoginController
   authenticationStub: Authentication
   validationStub: Validation
 }
@@ -40,7 +40,7 @@ interface SutTypes {
 const makeSut = (): SutTypes => {
   const authenticationStub = makeAuthentication()
   const validationStub = makeValidation()
-  const sut = new LoginContoller(authenticationStub, validationStub)
+  const sut = new LoginController(authenticationStub, validationStub)
   return {
     sut,
     authenticationStub,
