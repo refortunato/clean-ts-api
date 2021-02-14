@@ -7,5 +7,12 @@
         "allowJs": true,
         "strict": false,
         "strictNullChecks": false
-    }
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "**/*.spec.ts",
+        "**/*.test.ts",
+    ]
 }
