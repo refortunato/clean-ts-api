@@ -1,6 +1,6 @@
-import { SingUpController } from './singup'
+import { SingUpController } from './singup-controller'
 import { MissingParamError, ServerError } from '../../errors'
-import { AccountModel, AddAccountModel, AddAccount , Validation } from './singup-protocols'
+import { AccountModel, AddAccountModel, AddAccount , Validation } from './singup-controller-protocols'
 import { HttpRequest } from '../../protocols'
 import { badRequest } from '../../helpers/http/http-helper'
 
