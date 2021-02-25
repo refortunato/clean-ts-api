@@ -2,7 +2,7 @@ import { SingUpController } from './singup-controller'
 import { MissingParamError, ServerError } from '../../errors'
 import { AccountModel, AddAccountModel, AddAccount , Validation, Authentication, AuthenticationModel } from './singup-controller-protocols'
 import { HttpRequest } from '../../protocols'
-import { badRequest, serverError } from '../../helpers/http/http-helper'
+import { badRequest, serverError, ok } from '../../helpers/http/http-helper'
 
 const makeAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
@@ -97,13 +97,7 @@ describe('SingUp Controller', () => {
     const { sut } = makeSut()
     const httpRequest = makeFakeRequest()
     const httpResponse = await sut.handle(httpRequest)
-    expect(httpResponse.statusCode).toBe(200)
-    expect(httpResponse.body).toEqual({
-      id: 'valid_id',
-      name: 'valid_name',
-      email: 'valid_email@mail.com',
-      password: 'valid_password'
-    })
+    expect(httpResponse).toEqual(ok({ accessToken: 'any_token' }))
   })
 
   test('Should call Validation with correct values', async () => {
