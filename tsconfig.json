@@ -7,7 +7,8 @@
         "allowJs": true,
         "strict": false,
         "strictNullChecks": false,
-        "sourceMap": false
+        "sourceMap": false,
+        "rootDir": "src"
     },
     "include": [
         "src"
